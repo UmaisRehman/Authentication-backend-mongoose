@@ -1,4 +1,3 @@
-//user.routes.js
 import express from "express"
 
 import { authenticateUser, loginUser, logoutUser, regenerateAccessToken, registerUser } from "../controllers/user.controllers.js";

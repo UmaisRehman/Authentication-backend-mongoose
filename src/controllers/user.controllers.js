@@ -1,4 +1,3 @@
-//user.controllers.js
 import User from "../models/user.models.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt"
@@ -68,11 +67,10 @@ const logoutUser = async (req, res) => {
 }
 
 const regenerateAccessToken = async (req, res) => {
-    // cookies sa refresh token pakarlo
     const refreshToken = req.cookies.refreshToken || req.body.refreshToken;
     if (!refreshToken)
         return res.status(401).json({ message: "no refresh token found!" });
-    // jwt sa check krwao token sahi ha ya nahi
+    
     try {
         const decodedToken = jwt.verify(refreshToken, process.env.REFRESH_JWT_SECRET);
 
